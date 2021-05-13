@@ -13,12 +13,12 @@ class AllMovies extends Component {
 
   handleClick = (event) => {
     event.preventDefault();
-    console.log(event.target)
     this.setState({ currentCard: [event.target.id] })
   }
 
   findClickedMovie = () => {
     const findMovie = this.props.movieData.find(movie => movie.id === this.state.currentCard);
+    console.log(findMovie);
     return findMovie
   }
 
@@ -39,7 +39,10 @@ class AllMovies extends Component {
     return (
       <section>
         { !this.state.currentCard && this.allMovies}
-        { this.state.currentCard && this.findClickedMovie }
+        { this.state.currentCard &&
+          this.findClickedMovie &&
+          <div>its working</div>
+        }
       </section>
     )
   }
