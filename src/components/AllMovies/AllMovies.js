@@ -13,7 +13,8 @@ class AllMovies extends Component {
 
   handleClick = (event) => {
     event.preventDefault();
-    this.setState({ currentCard: [event.target.id] })
+    console.log(event.target)
+    this.setState({ currentCard: [event.target] })
   }
 
   findClickedMovie = () => {
