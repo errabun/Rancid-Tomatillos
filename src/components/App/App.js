@@ -19,7 +19,7 @@ class App extends Component {
           <h1>Rotten Tomatillos</h1>
           <h2>Profile</h2>
         </nav>
-        /*landing image*/
+        <p>landing img</p>
         <AllMovies movieData={this.state.movies} />
       </main>
     )
