@@ -1,3 +1,9 @@
 * {
   border: 1px solid green;
 }
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
