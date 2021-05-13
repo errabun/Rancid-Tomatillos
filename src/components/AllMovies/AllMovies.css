@@ -1,0 +1,10 @@
+section {
+
+}
+
+@media only screen and (min-width: 400px) {
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

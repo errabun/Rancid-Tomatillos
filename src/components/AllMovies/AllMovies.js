@@ -1,24 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react'
 import App from '../App/App'
+import Movie from '../Movie/Movie'
+import './AllMovies.css'
 
-class AllMovies extends Component {
-  constructor() {
-    super()
-    this.state = {
-
-    }
-  }
-
-  render() {
-    const allTitles = this.props.movieData.map(movie => {
-      return (
-          <li>{movie.title}</li>
-      )
-    })
+const AllMovies = (props) => {
+  const allMovies = props.movieData.map(movie => {
     return (
-      <ul>{allTitles}</ul>
+      <Movie
+        key = {movie.id}
+        id = {movie.id}
+        posterPath = {movie['poster_path']}
+        title = {movie.title}
+        avgRating = {movie['average_rating']}
+      />
     )
-  }
+  })
+  return (
+    <section>{allMovies}</section>
+  )
 }
 
 export default AllMovies

@@ -1,0 +1,25 @@
+* {
+  border: 1px solid green;
+}
+
+h3 {
+  margin: 0;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25vw;
+}
+
+.movie-poster {
+  width: 23vw;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 10vh;
+}
