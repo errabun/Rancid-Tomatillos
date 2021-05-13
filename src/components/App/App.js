@@ -13,7 +13,9 @@ class App extends Component {
 
   render() {
     return (
-      <AllMovies movieData={this.state.movies} />
+      <main>
+        <AllMovies movieData={this.state.movies} />
+      </main>
     )
   }
 }
