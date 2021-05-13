@@ -13,7 +13,7 @@ class App extends Component {
 
   render() {
     return (
-      <AllMovies movieData={this.state.movies}/>
+      <AllMovies movieData={this.state.movies} />
     )
   }
 }
