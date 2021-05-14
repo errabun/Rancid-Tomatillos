@@ -7,20 +7,27 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: movieData.movies
+      movies: movieData.movies,
+      currentCard: null
     }
+  }
+
+  handleClick = (event) => {
+    event.preventDefault();
+    console.log(Number(event.target.id))
+    this.setState({ currentCard: Number(event.target.id) })
   }
 
   render() {
     return (
       <main>
         <nav className="nav-bar">
-
           <h1>Rotten Tomatillos</h1>
           <h2>Profile</h2>
         </nav>
         <p>landing img</p>
-        <AllMovies movieData={this.state.movies} />
+        { !this.state.currentCard &&
+          <AllMovies movieData={this.state.movies} handleClick={this.handleClick}/>}
       </main>
     )
   }
