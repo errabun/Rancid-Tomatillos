@@ -18,6 +18,8 @@ class App extends Component {
     this.setState({ currentCard: Number(event.target.id) })
   }
 
+  
+
   render() {
     return (
       <main>
@@ -27,7 +29,12 @@ class App extends Component {
         </nav>
         <p>landing img</p>
         { !this.state.currentCard &&
-          <AllMovies movieData={this.state.movies} handleClick={this.handleClick}/>}
+          <AllMovies movieData={this.state.movies} handleClick={this.handleClick}/>
+        }
+        { this.state.currentCard &&
+
+        }
+
       </main>
     )
   }
