@@ -1,10 +1,10 @@
 import React from 'react'
-import App from '../App/App'
 import Movie from '../Movie/Movie'
 import './AllMovies.css'
 
-const AllMovies = (props) => {
-  const allMovies = props.movieData.map(movie => {
+const AllMovies = ({ movieData, handleClick }) => {
+
+  const allMovies = movieData.map(movie => {
     return (
       <Movie
         key = {movie.id}
@@ -12,11 +12,15 @@ const AllMovies = (props) => {
         posterPath = {movie['poster_path']}
         title = {movie.title}
         avgRating = {movie['average_rating']}
+        onClick = {event => handleClick(event)}
       />
     )
   })
+
   return (
-    <section>{allMovies}</section>
+    <section>
+      {allMovies}
+    </section>
   )
 }
 
