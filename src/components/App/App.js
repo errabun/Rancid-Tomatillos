@@ -18,9 +18,13 @@ class App extends Component {
     this.setState({ currentCard: Number(event.target.id) })
   }
 
+  returnHome = (event) => {
+    event.preventDefault();
+    this.setState({ currentCard: null })
+  }
+
   findMovie = () => {
     const currentMovie = this.state.movies.find(movie => movie.id === this.state.currentCard)
-    console.log(currentMovie)
     return currentMovie
   }
 
@@ -36,7 +40,7 @@ class App extends Component {
           <AllMovies movieData={this.state.movies} handleClick={this.handleClick}/>
         }
         { this.state.currentCard &&
-          <MovieInfo currentMovieInfo={this.findMovie()} />
+          <MovieInfo currentMovieInfo={this.findMovie()} returnHome={this.returnHome} />
         }
 
       </main>
