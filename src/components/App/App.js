@@ -2,30 +2,52 @@ import React, { Component } from 'react'
 import AllMovies from '../AllMovies/AllMovies'
 import MovieInfo from '../MovieInfo/MovieInfo'
 import './App.css'
-import movieData from '../../movieData'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: movieData.movies,
-      currentCard: null
+      movies: [],
+      currentMovieID: null,
+      currentMovie: null,
     }
   }
 
   handleClick = (event) => {
     event.preventDefault();
-    this.setState({ currentCard: Number(event.target.id) })
+    this.setState({ currentMovieID: Number(event.target.id) })
   }
 
   returnHome = (event) => {
     event.preventDefault();
-    this.setState({ currentCard: null })
+    this.setState({ currentMovieID: null })
+    this.setState({ currentMovie: null })
   }
 
-  findMovie = () => {
-    const currentMovie = this.state.movies.find(movie => movie.id === this.state.currentCard)
-    return currentMovie
+  componentDidUpdate() {
+    if (this.state.currentMovieID) {
+      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.currentMovieID}`)
+        .then(response => response.json())
+        .then(data => {
+          this.setState({ currentMovie: data.movie })
+        })
+    }
+    <p>when card is clicked, cardID in state is updated
+    which triggers componentDidUpdate
+    which sends new fetch request to get data by movieID
+    which updates state with current movie data
+    which triggers a re render to display MovieInfo with fetched data stoared in state
+
+    current issue with return home function--need to set currentMovie to null still</p>
+  }
+
+  componentDidMount() {
+    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ movies: data.movies })
+      })
+      .catch(() => this.setState({ error: "Shit Broke" }))
   }
 
   render() {
@@ -36,13 +58,15 @@ class App extends Component {
           <h2>Profile</h2>
         </nav>
         <p>landing img</p>
-        { !this.state.currentCard &&
+        {!this.state.movies.length &&
+          <h1>Loading...</h1>
+        }
+        { !this.state.currentMovieID &&
           <AllMovies movieData={this.state.movies} handleClick={this.handleClick}/>
         }
-        { this.state.currentCard &&
-          <MovieInfo currentMovieInfo={this.findMovie()} returnHome={this.returnHome} />
+        { this.state.currentMovie &&
+          <MovieInfo currentMovieInfo={this.state.currentMovie} returnHome={this.returnHome} />
         }
-
       </main>
     )
   }
