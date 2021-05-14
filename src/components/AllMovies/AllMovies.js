@@ -13,15 +13,15 @@ class AllMovies extends Component {
 
   handleClick = (event) => {
     event.preventDefault();
-    console.log(event.target)
-    this.setState({ currentCard: [event.target] })
+    console.log(Number(event.target.id))
+    this.setState({ currentCard: Number(event.target.id) })
   }
 
-  findClickedMovie = () => {
-    const findMovie = this.props.movieData.find(movie => movie.id === this.state.currentCard);
-    console.log(findMovie);
-    return findMovie
-  }
+  // findClickedMovie = () => {
+  //   const findMovie = this.props.movieData.find(movie => movie.id === this.state.currentCard);
+  //   console.log(findMovie);
+  //   return findMovie
+  // }
 
   allMovies = this.props.movieData.map(movie => {
     return (
@@ -41,7 +41,7 @@ class AllMovies extends Component {
       <section>
         { !this.state.currentCard && this.allMovies}
         { this.state.currentCard &&
-          this.findClickedMovie &&
+          // this.findClickedMovie &&  ?? this line and function aren't doing anything
           <div>its working</div>
         }
       </section>
