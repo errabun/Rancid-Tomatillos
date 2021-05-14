@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AllMovies from '../AllMovies/AllMovies'
+import MovieInfo from '../MovieInfo/MovieInfo'
 import './App.css'
 import movieData from '../../movieData'
 
@@ -14,11 +15,14 @@ class App extends Component {
 
   handleClick = (event) => {
     event.preventDefault();
-    console.log(Number(event.target.id))
     this.setState({ currentCard: Number(event.target.id) })
   }
 
-  
+  findMovie = () => {
+    const currentMovie = this.state.movies.find(movie => movie.id === this.state.currentCard)
+    console.log(currentMovie)
+    return currentMovie
+  }
 
   render() {
     return (
@@ -32,7 +36,7 @@ class App extends Component {
           <AllMovies movieData={this.state.movies} handleClick={this.handleClick}/>
         }
         { this.state.currentCard &&
-
+          <MovieInfo currentMovieInfo={this.findMovie()} />
         }
 
       </main>
