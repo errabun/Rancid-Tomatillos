@@ -5,40 +5,23 @@ import './App.css'
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       movies: [],
-      currentMovieID: null,
-      currentMovie: null,
+      currentMovie: null
     }
   }
 
   handleClick = (event) => {
-    event.preventDefault();
-    this.setState({ currentMovieID: Number(event.target.id) })
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${Number(event.target.id)}`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ currentMovie: data.movie })
+      })
   }
 
   returnHome = (event) => {
-    event.preventDefault();
-    this.setState({ currentMovieID: null })
     this.setState({ currentMovie: null })
-  }
-
-  componentDidUpdate() {
-    if (this.state.currentMovieID) {
-      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.currentMovieID}`)
-        .then(response => response.json())
-        .then(data => {
-          this.setState({ currentMovie: data.movie })
-        })
-    }
-    <p>when card is clicked, cardID in state is updated
-    which triggers componentDidUpdate
-    which sends new fetch request to get data by movieID
-    which updates state with current movie data
-    which triggers a re render to display MovieInfo with fetched data stoared in state
-
-    current issue with return home function--need to set currentMovie to null still</p>
   }
 
   componentDidMount() {
@@ -61,10 +44,10 @@ class App extends Component {
         {!this.state.movies.length &&
           <h1>Loading...</h1>
         }
-        { !this.state.currentMovieID &&
+        {!this.state.currentMovie &&
           <AllMovies movieData={this.state.movies} handleClick={this.handleClick}/>
         }
-        { this.state.currentMovie &&
+        {this.state.currentMovie &&
           <MovieInfo currentMovieInfo={this.state.currentMovie} returnHome={this.returnHome} />
         }
       </main>
