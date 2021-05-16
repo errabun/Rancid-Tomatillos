@@ -42,7 +42,9 @@ class App extends Component {
             <p>Random shit in it</p>
             <h1>Rotten Tomatillos</h1>
           </div>
-          <h2>Profile</h2>
+          <div className="nav-title">
+            <h2>Profile</h2>
+          </div>
         </nav>
         <div className="landing-img">
           <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2luZW1hfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="movie icon" />

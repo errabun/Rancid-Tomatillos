@@ -1,26 +1,23 @@
 * {
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 h3 {
   margin: 0;
 }
 
-.movie-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25vw;
-  margin: 10px; 
+.movie-poster:hover {
+  transform: scale(1.1);
+
+  box-shadow: 0 0 .75em #87e7ff;
 }
 
 .movie-poster {
-  width: 23vw;
-}
-
-.movie-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 10vh;
+  align-items: center;
+  width: 22vw;
+  margin: 1vw;
+  border-radius: 15px;
+  border: #87e7ff solid 3px;
 }
