@@ -18,6 +18,7 @@ class App extends Component {
       .then(data => {
         this.setState({ currentMovie: data.movie })
       })
+      .catch(() => this.setState({ error: "Couldn't fetch the movie you selected, please try again!" }))
   }
 
   returnHome = (event) => {
@@ -30,7 +31,7 @@ class App extends Component {
       .then(data => {
         this.setState({ movies: data.movies })
       })
-      .catch(() => this.setState({ error: "Shit Broke" }))
+      .catch(() => this.setState({ error: "Couldn't load any movies, please try again!" }))
   }
 
   render() {
@@ -41,7 +42,11 @@ class App extends Component {
           <h2>Profile</h2>
         </nav>
         <p>landing img</p>
+        { this.state.error &&
+          <h1>{this.state.error}</h1>
+        }
         {!this.state.movies.length &&
+          !this.state.error &&
           <h1>Loading...</h1>
         }
         {!this.state.currentMovie &&
