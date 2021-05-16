@@ -1,9 +1,31 @@
 * {
   border: 1px solid green;
+  margin: 0;
+}
+
+.landing-img {
+  overflow: hidden;
+
+}
+
+.landing-img img {
+  display: block;
+  width: 100%;
+  margin: -30% 0 0 0;
 }
 
 .nav-bar {
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   width: 100%;
+  background: linear-gradient(#3a0000, #990000, #3a0000);
+  font-family: 'Merriweather Sans', sans-serif;
+  color: white;
+  height: 20vh;
+}
+
+.nav-title {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
