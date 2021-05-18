@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Route, NavLink } from 'react-router-dom'
 import AllMovies from '../AllMovies/AllMovies'
 import MovieInfo from '../MovieInfo/MovieInfo'
 import Header from '../Header/Header'
@@ -49,12 +50,18 @@ class App extends Component {
           !this.state.error &&
           <h1>Loading...</h1>
         }
-        {!this.state.currentMovie &&
-          <AllMovies movieData={this.state.movies} handleClick={this.handleClick}/>
-        }
-        {this.state.currentMovie &&
-          <MovieInfo currentMovieInfo={this.state.currentMovie} returnHome={this.returnHome} />
-        }
+        <Route
+          exact path='/'
+          render={() => <AllMovies movieData={this.state.movies} handleClick={this.handleClick} />}
+        />
+        <Route
+          exact path='/movieInfo/:id'
+          render={() => {
+            if (this.state.currentMovie) {
+              return (<MovieInfo currentMovieInfo={this.state.currentMovie} returnHome={this.returnHome} />)
+            }
+          }}
+        />
       </main>
     )
   }
