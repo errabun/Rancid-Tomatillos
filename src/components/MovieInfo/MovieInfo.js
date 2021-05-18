@@ -1,5 +1,6 @@
 import React from 'react'
 import './MovieInfo.css'
+import { Link } from 'react-router-dom'
 
 const MovieInfo = ({ currentMovieInfo, returnHome }) => {
   const {
@@ -31,7 +32,9 @@ const MovieInfo = ({ currentMovieInfo, returnHome }) => {
           <p>{revenue}</p>
           <p>{runtime}</p>
           <p>{tagline}</p>
-          <button onClick={event => returnHome(event)}>Return Home</button>
+          <Link to='/'>
+            <button>Return Home</button>
+          </Link>
         </article>
       </div>
     </section>

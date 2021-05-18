@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, NavLink } from 'react-router-dom'
+import { Route, NavLink, Switch } from 'react-router-dom'
 import AllMovies from '../AllMovies/AllMovies'
 import MovieInfo from '../MovieInfo/MovieInfo'
 import Header from '../Header/Header'
@@ -21,10 +21,6 @@ class App extends Component {
         this.setState({ currentMovie: data.movie })
       })
       .catch(() => this.setState({ error: "Couldn't fetch the movie you selected, please try again!" }))
-  }
-
-  returnHome = (event) => {
-    this.setState({ currentMovie: null })
   }
 
   componentDidMount() {
@@ -50,18 +46,20 @@ class App extends Component {
           !this.state.error &&
           <h1>Loading...</h1>
         }
-        <Route
-          exact path='/'
-          render={() => <AllMovies movieData={this.state.movies} handleClick={this.handleClick} />}
-        />
-        <Route
+        <Switch>
+          <Route
           exact path='/movieInfo/:id'
           render={() => {
             if (this.state.currentMovie) {
-              return (<MovieInfo currentMovieInfo={this.state.currentMovie} returnHome={this.returnHome} />)
+              return (<MovieInfo currentMovieInfo={this.state.currentMovie} />)
             }
           }}
-        />
+          />
+          <Route
+            exact path='/'
+            render={() => <AllMovies movieData={this.state.movies} handleClick={this.handleClick} />}
+          />
+        </Switch>
       </main>
     )
   }
