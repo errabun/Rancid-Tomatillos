@@ -3,6 +3,7 @@ import { Route, NavLink, Switch } from 'react-router-dom'
 import AllMovies from '../AllMovies/AllMovies'
 import MovieInfo from '../MovieInfo/MovieInfo'
 import Header from '../Header/Header'
+import { fetchAllMovies, fetchMovieId } from '../../utilities/ApiCalls'
 import './App.css'
 
 class App extends Component {
@@ -15,21 +16,11 @@ class App extends Component {
   }
 
   handleClick = (event) => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${Number(event.target.id)}`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ currentMovie: data.movie })
-      })
-      .catch(() => this.setState({ error: "Couldn't fetch the movie you selected, please try again!" }))
+    return fetchMovieId(event);
   }
 
   componentDidMount() {
-    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ movies: data.movies })
-      })
-      .catch(() => this.setState({ error: "Couldn't load any movies, please try again!" }))
+    return fetchAllMovies();
   }
 
   render() {
