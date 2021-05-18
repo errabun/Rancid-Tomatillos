@@ -1,1 +1,18 @@
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
+.movie-backdrop {
+  width: 100%;
+}
+
+.movie-display {
+  display: flex;
+  flex-direction: row;
+}
+
+.movie-poster {
+  
+}
