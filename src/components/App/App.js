@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import AllMovies from '../AllMovies/AllMovies'
 import MovieInfo from '../MovieInfo/MovieInfo'
+import Header from '../Header/Header'
 import './App.css'
 
 class App extends Component {
@@ -37,11 +38,10 @@ class App extends Component {
   render() {
     return (
       <main>
-        <nav className="nav-bar">
-          <h1>Rotten Tomatillos</h1>
-          <h2>Profile</h2>
-        </nav>
-        <p>landing img</p>
+        <Header />
+        <div className="landing-img">
+          <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2luZW1hfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="movie icon" />
+        </div>
         { this.state.error &&
           <h1>{this.state.error}</h1>
         }

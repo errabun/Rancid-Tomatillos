@@ -1,9 +1,15 @@
 * {
-  border: 1px solid green;
+  /* border: 1px solid green; */
+  margin: 0;
 }
 
-.nav-bar {
-  display: flex;
-  justify-content: space-between;
+.landing-img {
+  overflow: hidden;
+
+}
+
+.landing-img img {
+  display: block;
   width: 100%;
+  margin: -30% 0 0 0;
 }

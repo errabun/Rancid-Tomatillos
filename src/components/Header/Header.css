@@ -1,0 +1,15 @@
+.nav-bar {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  background: linear-gradient(#240059, #4601b5, #240059);
+  font-family: 'Anton', sans-serif;
+  color: white;
+  height: 15vh;
+}
+
+.nav-title {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
