@@ -1,16 +1,39 @@
 import React from 'react'
 import './MovieInfo.css'
 
-const MovieInfo = (movie) => {
+const MovieInfo = ({ currentMovieInfo, returnHome }) => {
+  const {
+    id,
+    title,
+    poster_path,
+    backdrop_path,
+    release_date,
+    overview,
+    genres,
+    budget,
+    revenue,
+    runtime,
+    tagline,
+    average_rating
+  } = currentMovieInfo
   return (
     <section className='movie-card'>
-      <img src={movie.backdrop_path} alt='movie backdrop' />
-      <img src={movie.poster_path} alt='movie poster' />
-      <article className='movie-stats'>
-        <h2>{movie.title}</h2>
-        <h3>{movie.rating}</h3>
-        // this is where we will add more info we want to display when we have it from the API fetch
-      </article>
+      <img src={backdrop_path} alt='movie backdrop' className='movie-backdrop' />
+      <div className='movie-display'>
+        <img src={poster_path} alt='movie poster' className='movie-poster' />
+        <article className='movie-stats'>
+          <h2>{title}</h2>
+          <h3>{average_rating}</h3>
+          <p>{release_date}</p>
+          <p>{overview}</p>
+          <p>{genres}</p>
+          <p>{budget}</p>
+          <p>{revenue}</p>
+          <p>{runtime}</p>
+          <p>{tagline}</p>
+          <button onClick={event => returnHome(event)}>Return Home</button>
+        </article>
+      </div>
     </section>
   )
 }
