@@ -9,7 +9,6 @@ const fetchAllMovies = () => {
     })
 }
 
-
 const fetchMovieId = (event) => {
   return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${Number(event.target.id)}`)
     .then(response => {

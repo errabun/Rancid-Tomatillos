@@ -55,8 +55,8 @@ class App extends Component {
             exact path='/'
             render={() => {
               return !this.state.error ?
-              <AllMovies movieData={this.state.movies} handleClick={this.handleClick} /> :
-              <h1>{this.state.error}</h1>
+                <AllMovies movieData={this.state.movies} handleClick={this.handleClick} /> :
+                <h1>{this.state.error}</h1>
             }}
           />
         </Switch>
