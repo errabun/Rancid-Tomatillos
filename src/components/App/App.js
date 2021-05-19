@@ -16,11 +16,19 @@ class App extends Component {
   }
 
   handleClick = (event) => {
-    return fetchMovieId(event);
+    fetchMovieId(event)
+      .then(data => {
+        this.setState({ currentMovie: data.movie })
+      })
+      .catch((error) => this.setState({ error: error }))
   }
 
   componentDidMount() {
-    return fetchAllMovies();
+    fetchAllMovies()
+    .then(data => {
+      this.setState({ movies: data.movies })
+    })
+    .catch((error) => this.setState({ error: error }))
   }
 
   render() {
