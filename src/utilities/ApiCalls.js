@@ -9,8 +9,8 @@ const fetchAllMovies = () => {
     })
 }
 
-const fetchMovieId = (event) => {
-  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${Number(event.target.id)}`)
+const fetchMovieId = (id) => {
+  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
     .then(response => {
       if (!response.ok) {
         throw new Error("Couldn't fetch the movie you selected, please try again!")

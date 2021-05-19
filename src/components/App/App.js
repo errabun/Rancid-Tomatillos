@@ -16,7 +16,12 @@ class App extends Component {
   }
 
   handleClick = (event) => {
-    fetchMovieId(event)
+    const id = parseInt(event.target.id)
+    return this.fetchSingleMovie(id)
+  }
+
+  fetchSingleMovie = (id) => {
+    fetchMovieId(id)
       .then(data => {
         this.setState({ currentMovie: data.movie })
       })
@@ -45,7 +50,9 @@ class App extends Component {
         <Switch>
           <Route
           exact path='/movieInfo/:id'
-          render={() => {
+          render={({ match }) => {
+            const { id } = match.params
+            this.fetchSingleMovie(id)
             return this.state.currentMovie ?
                <MovieInfo currentMovieInfo={this.state.currentMovie} /> :
                <h1>{this.state.error}</h1>
