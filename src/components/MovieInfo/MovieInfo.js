@@ -17,6 +17,9 @@ const MovieInfo = ({ currentMovieInfo, returnHome }) => {
     tagline,
     average_rating
   } = currentMovieInfo
+
+  const roundedRating = Number.parseFloat(average_rating).toFixed(2)
+
   return (
     <section className='movie-card'>
       <img src={backdrop_path} alt='movie backdrop' className='movie-backdrop' />
@@ -24,7 +27,7 @@ const MovieInfo = ({ currentMovieInfo, returnHome }) => {
         <img src={poster_path} alt='movie poster' className='movie-poster' />
         <article className='movie-stats'>
           <h2>{title}</h2>
-          <h3>{average_rating}</h3>
+          <h3>{roundedRating}</h3>
           <p>{release_date}</p>
           <p>{overview}</p>
           <p>{genres}</p>
