@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import { Route, NavLink, Switch } from 'react-router-dom'
 import AllMovies from '../AllMovies/AllMovies'
 import MovieInfo from '../MovieInfo/MovieInfo'
 import Header from '../Header/Header'
+import { fetchAllMovies, fetchMovieId } from '../../utilities/ApiCalls'
 import './App.css'
 
 class App extends Component {
@@ -14,25 +16,24 @@ class App extends Component {
   }
 
   handleClick = (event) => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${Number(event.target.id)}`)
-      .then(response => response.json())
+    const id = parseInt(event.target.id)
+    return this.fetchSingleMovie(id)
+  }
+
+  fetchSingleMovie = (id) => {
+    fetchMovieId(id)
       .then(data => {
         this.setState({ currentMovie: data.movie })
       })
-      .catch(() => this.setState({ error: "Couldn't fetch the movie you selected, please try again!" }))
-  }
-
-  returnHome = (event) => {
-    this.setState({ currentMovie: null })
+      .catch((error) => this.setState({ error: "Couldn't fetch the movie you selected, please try again!" }))
   }
 
   componentDidMount() {
-    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-      .then(response => response.json())
+    fetchAllMovies()
       .then(data => {
         this.setState({ movies: data.movies })
       })
-      .catch(() => this.setState({ error: "Couldn't load any movies, please try again!" }))
+      .catch((error) => this.setState({ error: "Couldn't load any movies, please try again!" }))
   }
 
   render() {
@@ -42,19 +43,30 @@ class App extends Component {
         <div className="landing-img">
           <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2luZW1hfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="movie icon" />
         </div>
-        { this.state.error &&
-          <h1>{this.state.error}</h1>
-        }
         {!this.state.movies.length &&
           !this.state.error &&
           <h1>Loading...</h1>
         }
-        {!this.state.currentMovie &&
-          <AllMovies movieData={this.state.movies} handleClick={this.handleClick}/>
-        }
-        {this.state.currentMovie &&
-          <MovieInfo currentMovieInfo={this.state.currentMovie} returnHome={this.returnHome} />
-        }
+        <Switch>
+          <Route
+          exact path='/movieInfo/:id'
+          render={({ match }) => {
+            const { id } = match.params
+            this.fetchSingleMovie(id)
+            return this.state.currentMovie ?
+               <MovieInfo currentMovieInfo={this.state.currentMovie} /> :
+               <h1>{this.state.error}</h1>
+          }}
+          />
+          <Route
+            exact path='/'
+            render={() => {
+              return !this.state.error ?
+                <AllMovies movieData={this.state.movies} handleClick={this.handleClick} /> :
+                <h1>{this.state.error}</h1>
+            }}
+          />
+        </Switch>
       </main>
     )
   }
