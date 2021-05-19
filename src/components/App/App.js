@@ -20,15 +20,15 @@ class App extends Component {
       .then(data => {
         this.setState({ currentMovie: data.movie })
       })
-      .catch((error) => this.setState({ error: error }))
+      .catch((error) => this.setState({ error: "Couldn't fetch the movie you selected, please try again!" }))
   }
 
   componentDidMount() {
     fetchAllMovies()
-    .then(data => {
-      this.setState({ movies: data.movies })
-    })
-    .catch((error) => this.setState({ error: error }))
+      .then(data => {
+        this.setState({ movies: data.movies })
+      })
+      .catch((error) => this.setState({ error: "Couldn't load any movies, please try again!" }))
   }
 
   render() {
@@ -38,9 +38,6 @@ class App extends Component {
         <div className="landing-img">
           <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2luZW1hfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="movie icon" />
         </div>
-        { this.state.error &&
-          <h1>{this.state.error}</h1>
-        }
         {!this.state.movies.length &&
           !this.state.error &&
           <h1>Loading...</h1>
@@ -49,14 +46,18 @@ class App extends Component {
           <Route
           exact path='/movieInfo/:id'
           render={() => {
-            if (this.state.currentMovie) {
-              return (<MovieInfo currentMovieInfo={this.state.currentMovie} />)
-            }
+            return this.state.currentMovie ?
+               <MovieInfo currentMovieInfo={this.state.currentMovie} /> :
+               <h1>{this.state.error}</h1>
           }}
           />
           <Route
             exact path='/'
-            render={() => <AllMovies movieData={this.state.movies} handleClick={this.handleClick} />}
+            render={() => {
+              return !this.state.error ?
+              <AllMovies movieData={this.state.movies} handleClick={this.handleClick} /> :
+              <h1>{this.state.error}</h1>
+            }}
           />
         </Switch>
       </main>
