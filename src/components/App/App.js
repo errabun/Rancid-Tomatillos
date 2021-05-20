@@ -3,29 +3,15 @@ import { Route, NavLink, Switch } from 'react-router-dom'
 import AllMovies from '../AllMovies/AllMovies'
 import MovieInfo from '../MovieInfo/MovieInfo'
 import Header from '../Header/Header'
-import { fetchAllMovies, fetchMovieId } from '../../utilities/ApiCalls'
+import { fetchAllMovies } from '../../utilities/ApiCalls'
 import './App.css'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: [],
-      currentMovie: null
+      movies: []
     }
-  }
-
-  handleClick = (event) => {
-    const id = parseInt(event.target.id)
-    return this.fetchSingleMovie(id)
-  }
-
-  fetchSingleMovie = (id) => {
-    fetchMovieId(id)
-      .then(data => {
-        this.setState({ currentMovie: data.movie })
-      })
-      .catch((error) => this.setState({ error: "Couldn't fetch the movie you selected, please try again!" }))
   }
 
   componentDidMount() {
@@ -52,17 +38,14 @@ class App extends Component {
           exact path='/movieInfo/:id'
           render={({ match }) => {
             const { id } = match.params
-            this.fetchSingleMovie(id)
-            return this.state.currentMovie ?
-               <MovieInfo currentMovieInfo={this.state.currentMovie} /> :
-               <h1>{this.state.error}</h1>
+            return <MovieInfo currentMovieInfo={id} />
           }}
           />
           <Route
             exact path='/'
             render={() => {
               return !this.state.error ?
-                <AllMovies movieData={this.state.movies} handleClick={this.handleClick} /> :
+                <AllMovies movieData={this.state.movies} /> :
                 <h1>{this.state.error}</h1>
             }}
           />
