@@ -17,7 +17,8 @@ describe('Movie', () => {
   it('Should display movie poster card', () => {
     cy.get('img').should('have.class', 'movie-poster')
   })
+  it('Should be a clickable card that redirects to MovieInfo for that card', () => {
+    cy.get('.movie-poster').click()
+      .url().should('include', '/movieInfo/694919')
+  })
 })
-
-//check that movie card is created--should have image element
-//check that if you click on the card, it creates instance of MovieInfo
