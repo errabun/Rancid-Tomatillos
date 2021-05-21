@@ -33,9 +33,9 @@ class MovieInfo extends Component {
             <h3>{this.state.currentMovie.average_rating}</h3>
             <p>{this.state.currentMovie.release_date}</p>
             <p>{this.state.currentMovie.overview}</p>
-            <p>{this.state.currentMovie.genres}</p>
-            <p>{this.state.currentMovie.budget}</p>
-            <p>{this.state.currentMovie.revenue}</p>
+            <p>Genres: {this.state.currentMovie.genres}</p>
+            <p>Budget: ${this.state.currentMovie.budget}</p>
+            <p>Revenue: ${this.state.currentMovie.revenue}</p>
             <p>{this.state.currentMovie.runtime}</p>
             <p>{this.state.currentMovie.tagline}</p>
             <Link to='/'>
