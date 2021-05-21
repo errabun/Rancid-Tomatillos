@@ -43,7 +43,7 @@ class AllMovies extends Component {
         <section>
           {!this.state.movies.length &&
             !this.state.error &&
-            <h1>Loading...</h1>
+            <h1 className='loading'>Loading...</h1>
           }
           {this.state.error &&
             <h1>{this.state.error}</h1>
