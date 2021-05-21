@@ -12,6 +12,10 @@ class MovieInfo extends Component {
     }
   }
 
+  roundRating = (num) => {
+    return Math.round(num * 100) / 100
+  }
+
   componentDidMount() {
     fetchMovieId(this.state.id)
       .then(data => {
@@ -29,17 +33,17 @@ class MovieInfo extends Component {
         <div className='movie-display'>
           <img src={this.state.currentMovie.poster_path} alt='movie poster' className='movie-poster' />
           <article className='movie-stats'>
-            <h2>{this.state.currentMovie.title}</h2>
-            <h3>{this.state.currentMovie.average_rating}</h3>
-            <p>{this.state.currentMovie.release_date}</p>
-            <p>{this.state.currentMovie.overview}</p>
-            <p>{this.state.currentMovie.genres}</p>
-            <p>{this.state.currentMovie.budget}</p>
-            <p>{this.state.currentMovie.revenue}</p>
-            <p>{this.state.currentMovie.runtime}</p>
-            <p>{this.state.currentMovie.tagline}</p>
+            <h2 className='title'>{this.state.currentMovie.title}</h2>
+            <h3 className='avg-rating'>{this.roundRating(this.state.currentMovie.average_rating)}</h3>
+            <p className='release-date'>{this.state.currentMovie.release_date}</p>
+            <p className='overview'>{this.state.currentMovie.overview}</p>
+            <p className='genres'>{this.state.currentMovie.genres}</p>
+            <p className='budget'>{this.state.currentMovie.budget}</p>
+            <p className='revenue'>{this.state.currentMovie.revenue}</p>
+            <p className='runtime'>{this.state.currentMovie.runtime}</p>
+            <p className='tagline'>{this.state.currentMovie.tagline}</p>
             <Link to='/'>
-              <button>Return Home</button>
+              <button className='return-home'>Return Home</button>
             </Link>
           </article>
         </div>
