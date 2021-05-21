@@ -29,7 +29,12 @@ class MovieInfo extends Component {
     return (
       <>
         {!this.state.currentMovie &&
-          <h1>{this.state.error}</h1>}
+          <h1>{this.state.error}</h1>
+        }
+        {!this.state.currentMovie &&
+          !this.state.error &&
+          <h1>Loading...</h1>
+        }
         {this.state.currentMovie &&
         <section className='movie-card'>
           <img src={this.state.currentMovie.backdrop_path} alt='movie backdrop' className='movie-backdrop' />
