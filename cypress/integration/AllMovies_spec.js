@@ -43,6 +43,6 @@ describe('AllMovies: Error', () => {
   it('Should show an error message if the browser is unable to fetch any movies', () => {
     cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', {})
     .visit('http://localhost:3000/')
-    .get('h1').contains("Couldn't load any movies, please try again!")
+    .get('.error-msg').contains("Couldn't load any movies, please try again!")
   })
 })

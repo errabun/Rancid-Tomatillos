@@ -46,7 +46,7 @@ class AllMovies extends Component {
             <h1 className='loading'>Loading...</h1>
           }
           {this.state.error &&
-            <h1>{this.state.error}</h1>
+            <h1 className='error-msg'>{this.state.error}</h1>
           }
           {!this.state.error &&
             this.state.movies.length &&
