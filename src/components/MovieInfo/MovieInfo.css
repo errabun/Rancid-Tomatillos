@@ -6,6 +6,7 @@ h2, h3, p {
   display: flex;
   flex-direction: column;
   width: 100%;
+  color: white;
 }
 
 .movie-backdrop {

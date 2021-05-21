@@ -12,6 +12,10 @@ class MovieInfo extends Component {
     }
   }
 
+  roundRating = (num) => {
+    return Math.round(num * 100) / 100
+  }
+
   componentDidMount() {
     fetchMovieId(this.state.id)
       .then(data => {
