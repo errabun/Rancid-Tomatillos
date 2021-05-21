@@ -19,10 +19,10 @@ describe('MovieInfo', () => {
     cy.get('.title').should('have.text', 'Money Plane')
   })
   it('Should display the movie average rating to the second decimal place', () => {
-    cy.get('.avg-rating').should('have.text', '6.14')
+    cy.get('.avg-rating').should('have.text', 'Rating: 6.14')
   })
   it('Should display the movie release date', () => {
-    cy.get('.release-date').should('have.text', '2020-09-29')
+    cy.get('.release-date').should('have.text', 'Release Date: 2020-09-29')
   })
   it('Should display the movie overview', () => {
     cy.get('.overview').should('include.text', 'A professional thief with $40 million in debt and his family')
@@ -37,7 +37,7 @@ describe('MovieInfo', () => {
     cy.get('.revenue').should('have.text', 'Revenue: $0')
   })
   it('Should display the movie runtime', () => {
-    cy.get('.runtime').should('have.text', '82')
+    cy.get('.runtime').should('have.text', 'Runtime: 82')
   })
   it('Should display the movie tagline', () => {
     cy.get('.tagline').should('have.text', '')

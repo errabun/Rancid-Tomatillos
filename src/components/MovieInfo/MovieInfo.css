@@ -5,6 +5,8 @@ h2, h3, p {
 .movie-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 85vh;
   color: white;
@@ -15,8 +17,24 @@ h2, h3, p {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-around;
 }
 
-.movie-poster {
+.ind-movie-poster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28vw;
+  min-width: 300px;
+  border-radius: 15px;
+  border: #87e7ff solid 3px;
+  margin: 2vw;
+}
 
+.movie-stats {
+  margin: 2vw;
+  padding: 1vw;
+  border-radius: 15px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  width: 40vw;
 }
