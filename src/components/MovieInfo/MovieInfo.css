@@ -1,3 +1,7 @@
+h2, h3, p {
+  color: white;
+}
+
 .movie-card {
   display: flex;
   flex-direction: column;
@@ -11,8 +15,9 @@
 .movie-display {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .movie-poster {
-  
+
 }
