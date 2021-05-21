@@ -4,20 +4,13 @@ h2, h3, p {
 
 .movie-card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 85vh;
-  color: white;
-  background-size: cover;
-}
-
-.movie-display {
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  width: 100%;
+  color: white;
+  border-top: #87e7ff solid 3px;
+  border-bottom: #87e7ff solid 3px;
+  background-size: cover;
 }
 
 .ind-movie-poster {
