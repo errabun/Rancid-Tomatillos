@@ -32,7 +32,7 @@ class MovieInfo extends Component {
         }
         {!this.state.currentMovie &&
           !this.state.error &&
-          <h1>Loading..</h1>
+          <h1>Loading...</h1>
         }
         {this.state.currentMovie &&
         <section className='movie-card' style={{

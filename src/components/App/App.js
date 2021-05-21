@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Route, NavLink, Switch } from 'react-router-dom'
 import AllMovies from '../AllMovies/AllMovies'
 import MovieInfo from '../MovieInfo/MovieInfo'
@@ -21,7 +21,7 @@ const App = () => {
           exact path='/'
           render={() => {
             return (
-              <AllMovies /> 
+              <AllMovies />
             )
           }}
         />
