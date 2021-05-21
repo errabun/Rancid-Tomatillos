@@ -31,10 +31,10 @@ describe('MovieInfo', () => {
     cy.get('.genres').should('have.length', 1)
   })
   it('Should display the movie budget', () => {
-    cy.get('.budget').should('have.text', '0')
+    cy.get('.budget').should('have.text', 'Budget: $0')
   })
   it('Should display the movie revenue', () => {
-    cy.get('.revenue').should('have.text', '0')
+    cy.get('.revenue').should('have.text', 'Revenue: $0')
   })
   it('Should display the movie runtime', () => {
     cy.get('.runtime').should('have.text', '82')
@@ -46,7 +46,7 @@ describe('MovieInfo', () => {
     cy.get('.movie-poster').should('be.visible')
   })
   it('Should display the movie backdrop', () => {
-    cy.get('.movie-backdrop').should('be.visible')
+    cy.get('.movie-card').should('have.attr', 'style')
   })
   it('Should render a return home button', () => {
     cy.get('.return-home').should('exist')
