@@ -94,10 +94,8 @@ describe('Error', () => {
       ]
     })
     .visit('http://localhost:3000/')
+    .intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {})
     .get('.movie-poster').click()
-    .intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
-      'movie': {}
-    })
     .get('h1').contains("Couldn't fetch the movie you selected, please try again!")
   })
 })
