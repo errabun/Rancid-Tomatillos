@@ -7,6 +7,10 @@ html {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+.landing-img {
+  overflow: hidden;
+}
+
 @media only screen and (max-width: 800px) {
   .all-movies {
     grid-template-columns: 1fr 1fr 1fr;
