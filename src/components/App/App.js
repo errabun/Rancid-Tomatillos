@@ -1,14 +1,16 @@
 import React from 'react'
-import { Route, NavLink, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import AllMovies from '../AllMovies/AllMovies'
 import MovieInfo from '../MovieInfo/MovieInfo'
 import Header from '../Header/Header'
+import Search from '../SearchBar/SearchBar'
 import './App.css'
 
 const App = () => {
   return (
     <main>
       <Header />
+      <Search />
       <Switch>
         <Route
         exact path='/movieInfo/:id'

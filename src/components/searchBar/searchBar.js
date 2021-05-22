@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './searchBar.css'
+import './SearchBar.css'
 
 class Search extends Component {
   constructor() {
@@ -20,13 +20,15 @@ class Search extends Component {
 
   render() {
     return (
-      <form>
+      <form className='landing-img' style={{
+        backgroundImage:'url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2luZW1hfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80)'
+      }}>
         <input
           type='text'
           placeholder='Search title or genre'
           name='query'
           value={this.state.query}
-          onChange={event => this.filterSearch(event)} >  // need to write functionality for this function
+          onChange={event => this.filterSearch(event)} >
         </input>
         <button onClick={event => this.submitSearch(event)}>SEARCH</button>
       </form>
