@@ -20,8 +20,8 @@ class AllMovies extends Component {
       .catch((error) => this.setState({ error: "Couldn't load any movies, please try again!" }))
   }
 
-  allMovies() {
-    const mappedMovies = this.state.movies.map(movie => {
+  allMovies(data) {
+    const mappedMovies = data.map(movie => {
       return (
         <Movie
           key = {movie.id}
@@ -38,8 +38,10 @@ class AllMovies extends Component {
 
 
   submitSearch = inputData => {
-    const findMovie = this.state.movies.filter(movie => movie.title.includes(inputData))
-    console.log(findMovie)
+    const findMovie = this.state.movies.filter(movie => {
+      const titleLower = movie.title.toLowerCase()
+      return titleLower.includes(inputData.toLowerCase())
+    })
     if (!findMovie.length) {
       this.setState({ error: "No movies matched your search!" })
     }
@@ -61,9 +63,13 @@ class AllMovies extends Component {
             <h1 className='error-msg'>{this.state.error}</h1>
           }
           {!this.state.error &&
+            this.state.foundMovie &&
+            <section className='all-movies'>{this.allMovies(this.state.foundMovie)}</section>
+          }
+          {!this.state.error &&
             !this.state.foundMovie &&
             this.state.movies.length &&
-            <section className='all-movies'>{this.allMovies()}</section>
+            <section className='all-movies'>{this.allMovies(this.state.movies)}</section>
           }
         </section>
       </>
