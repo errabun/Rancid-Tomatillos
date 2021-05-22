@@ -50,28 +50,36 @@ class MovieInfo extends Component {
               <p className='genres'>{this.formatGenres(this.state.currentMovie.genres)}</p>
             </div>
             <table className='data-table'>
+              <thead>
                 <tr className='top-row'>
                   <td>Runtime</td>
                   <td>Release Date</td>
                 </tr>
+              </thead>
+              <tbody>
                 <tr>
                   <td className='runtime'>{this.state.currentMovie.runtime} minutes</td>
                   <td className='release-date'>{this.state.currentMovie.release_date}</td>
                 </tr>
+              </tbody>
             </table>
             <div className='overview-tag'>
               <p className='overview'>{this.state.currentMovie.overview}</p>
               <p className='tagline'>"{this.state.currentMovie.tagline}"</p>
             </div>
             <table className='data-table'>
+              <thead>
                 <tr className='top-row'>
                   <td>Budget</td>
                   <td>Revenue</td>
                 </tr>
+              </thead>
+              <tbody>
                 <tr>
                   <td className='budget'>${this.state.currentMovie.budget}</td>
                   <td className='revenue'>${this.state.currentMovie.revenue}</td>
                 </tr>
+              </tbody>
             </table>
             <Link to='/'>
               <button className='return-home'>Return Home</button>

@@ -21,3 +21,17 @@ h3 {
   border-radius: 15px;
   border: #87e7ff solid 3px;
 }
+
+@media only screen and (max-width: 800px) {
+  .movie-poster {
+    width: 30vw;
+    margin: .75vw;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .movie-poster {
+    margin-top: 5vw;
+    width: 90vw;
+  }
+}
