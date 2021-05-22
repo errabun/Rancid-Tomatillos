@@ -2,20 +2,21 @@ import React, { Component } from 'react'
 import './SearchBar.css'
 
 class Search extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state= {
       query: ''
     }
   }
 
-  filterSearch = event => {
+  searchInput = event => {
     this.setState({ query: event.target.value })
   }
 
-  submitSearch = event => {
+  getQuery = event => {
     event.preventDefault()
-
+    const inputData = this.state.query
+    this.props.submitSearch(inputData)
   }
 
   render() {
@@ -27,9 +28,9 @@ class Search extends Component {
             placeholder='Search title or genre'
             name='query'
             value={this.state.query}
-            onChange={event => this.filterSearch(event)} >
+            onChange={event => this.searchInput(event)} >
           </input>
-          <button onClick={event => this.submitSearch(event)}>SEARCH</button>
+          <button onClick={event => this.getQuery(event)}>SEARCH</button>
         </form>
       </div>
     )

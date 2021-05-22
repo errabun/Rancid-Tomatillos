@@ -35,11 +35,22 @@ class AllMovies extends Component {
     return mappedMovies
   }
 
+
+
+  submitSearch = inputData => {
+    const findMovie = this.state.movies.filter(movie => movie.title.includes(inputData))
+    console.log(findMovie)
+    if (!findMovie.length) {
+      this.setState({ error: "No movies matched your search!" })
+    }
+    this.setState({ foundMovie: findMovie })
+  }
+
   render() {
     return (
       <>
         <div className='landing-img'>
-          <Search />
+          <Search submitSearch={this.submitSearch} />
         </div>
         <section>
           {!this.state.movies.length &&
@@ -50,6 +61,7 @@ class AllMovies extends Component {
             <h1 className='error-msg'>{this.state.error}</h1>
           }
           {!this.state.error &&
+            !this.state.foundMovie &&
             this.state.movies.length &&
             <section className='all-movies'>{this.allMovies()}</section>
           }
