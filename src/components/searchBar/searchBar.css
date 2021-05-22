@@ -1,5 +1,17 @@
-.landing-img img {
+.search-container {
+  background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2luZW1hfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80');
   display: block;
-  width: 100%;
-  margin: -30% 0 0 0;
+  height: 350px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+/* .search-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+} */
