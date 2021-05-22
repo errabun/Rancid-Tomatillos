@@ -25,9 +25,58 @@ h2, h3, p {
 }
 
 .movie-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: #87e7ff solid 3px;
   margin: 2vw;
-  padding: 1vw;
+  padding: 3vw;
   border-radius: 15px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
   width: 40vw;
+}
+
+.title-rating-genres {
+  margin-bottom: 1vw;
+  text-align: center;
+}
+
+.title {
+  font-size: 4rem;
+}
+
+.avg-rating {
+  font-size: 2rem;
+  margin-bottom: 1vw;
+}
+
+.overview-tag {
+  margin-bottom: .5vw;
+  text-align: center;
+}
+
+.overview {
+  margin-bottom: .5vw;
+}
+
+.data-table {
+  margin-bottom: .5vw;
+  text-align: center;
+  border-spacing: 1.5vw;
+}
+
+.top-row {
+  text-decoration: underline;
+}
+
+.return-home {
+  border: #87e7ff solid 3px;
+  border-radius: 15px;
+  background-color: #240059;
+  color: white;
+  font-size: 1.5rem;
+}
+.return-home:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 .75em #87e7ff;
 }
