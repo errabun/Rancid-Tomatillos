@@ -83,7 +83,22 @@ h2, h3, p {
   color: white;
   font-size: 1.5rem;
 }
+
 .return-home:hover {
   transform: scale(1.1);
   box-shadow: 0 0 .75em #87e7ff;
+}
+
+@media only screen and (max-width: 550px) {
+  .movie-card {
+    flex-direction: column-reverse;
+  }
+
+  .ind-movie-poster {
+    width: 90vw;
+  }
+
+  .movie-stats {
+    width: 84vw;
+  }
 }

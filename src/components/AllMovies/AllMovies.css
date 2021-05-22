@@ -1,10 +1,22 @@
-section {
-  background-color: #240059
+html {
+  background-color: #240059;
 }
 
-@media only screen and (min-width: 400px) {
-  section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+.all-movies {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media only screen and (max-width: 800px) {
+  .all-movies {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .all-movies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

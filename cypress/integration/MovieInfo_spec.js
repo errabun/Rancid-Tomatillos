@@ -55,11 +55,47 @@ describe('MovieInfo', () => {
     cy.get('.return-home').click()
       .url().should('include', '/')
   })
-  it('Should render a loading message when waiting for the fetch call for the MovieInfo to complete', () => {
+})
 
+describe('Loading', () => {
+  it('Should render a loading message when waiting for fetch to complete', () => {
+    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      "movies": [
+        {
+          "id": 694919,
+          "poster_path": "https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg",
+          "title": "Money Plane",
+          "average_rating": 6.666666666666667,
+          "release_date": "2020-09-29"
+        }
+      ]
+    })
+    .visit('http://localhost:3000/')
+    .get('.movie-poster').click()
+    .intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {})
+    .get('h1').contains('Loading...')
   })
-  it('Should render an error message when there is an error with fetching data for MovieInfo', () => {
+})
 
+describe('Error', () => {
+  it('Should render an error message when there is an error with fetching data for MovieInfo', () => {
+    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      "movies": [
+        {
+          "id": 694919,
+          "poster_path": "https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg",
+          "title": "Money Plane",
+          "average_rating": 6.666666666666667,
+          "release_date": "2020-09-29"
+        }
+      ]
+    })
+    .visit('http://localhost:3000/')
+    .intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {})
+    .get('.movie-poster').click()
+    .get('h1').contains("Couldn't fetch the movie you selected, please try again!")
   })
 })
 

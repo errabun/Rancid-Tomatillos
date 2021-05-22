@@ -50,7 +50,7 @@ class AllMovies extends Component {
           }
           {!this.state.error &&
             this.state.movies.length &&
-            <section>{this.allMovies()}</section>
+            <section className='all-movies'>{this.allMovies()}</section>
           }
         </section>
       </>
