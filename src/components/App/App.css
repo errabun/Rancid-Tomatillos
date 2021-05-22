@@ -3,6 +3,11 @@
   margin: 0;
 }
 
+main {
+  height: 100vh;
+  background-color: #240059;
+}
+
 .landing-img {
   overflow: hidden;
 

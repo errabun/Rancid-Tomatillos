@@ -16,6 +16,10 @@ class MovieInfo extends Component {
     return Math.round(num * 100) / 100
   }
 
+  formatGenres = (genres) => {
+    return genres.join(", ")
+  }
+
   componentDidMount() {
     fetchMovieId(this.state.id)
       .then(data => {
@@ -25,7 +29,6 @@ class MovieInfo extends Component {
   }
 
   render() {
-
     return (
       <>
         {!this.state.currentMovie &&
@@ -36,25 +39,44 @@ class MovieInfo extends Component {
           <h1>Loading...</h1>
         }
         {this.state.currentMovie &&
-        <section className='movie-card'>
-          <img src={this.state.currentMovie.backdrop_path} alt='movie backdrop' className='movie-backdrop' />
-          <div className='movie-display'>
-            <img src={this.state.currentMovie.poster_path} alt='movie poster' className='movie-poster' />
-            <article className='movie-stats'>
-              <h2>{this.state.currentMovie.title}</h2>
-              <h3>{this.state.currentMovie.average_rating}</h3>
-              <p>{this.state.currentMovie.release_date}</p>
-              <p>{this.state.currentMovie.overview}</p>
-              <p>Genres: {this.state.currentMovie.genres}</p>
-              <p>Budget: ${this.state.currentMovie.budget}</p>
-              <p>Revenue: ${this.state.currentMovie.revenue}</p>
-              <p>{this.state.currentMovie.runtime}</p>
-              <p>{this.state.currentMovie.tagline}</p>
-              <Link to='/'>
-                <button>Return Home</button>
-              </Link>
-            </article>
-          </div>
+        <section className='movie-card' style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${this.state.currentMovie.backdrop_path})`
+        }}>
+          <img src={this.state.currentMovie.poster_path} alt='movie poster' className='ind-movie-poster' />
+          <article className='movie-stats'>
+            <div className='title-rating-genres'>
+              <h2 className='title'>{this.state.currentMovie.title}</h2>
+              <h3 className='avg-rating'>Rating: {this.roundRating(this.state.currentMovie.average_rating)}</h3>
+              <p className='genres'>{this.formatGenres(this.state.currentMovie.genres)}</p>
+            </div>
+            <table className='data-table'>
+                <tr className='top-row'>
+                  <td>Runtime</td>
+                  <td>Release Date</td>
+                </tr>
+                <tr>
+                  <td className='runtime'>{this.state.currentMovie.runtime} minutes</td>
+                  <td className='release-date'>{this.state.currentMovie.release_date}</td>
+                </tr>
+            </table>
+            <div className='overview-tag'>
+              <p className='overview'>{this.state.currentMovie.overview}</p>
+              <p className='tagline'>"{this.state.currentMovie.tagline}"</p>
+            </div>
+            <table className='data-table'>
+                <tr className='top-row'>
+                  <td>Budget</td>
+                  <td>Revenue</td>
+                </tr>
+                <tr>
+                  <td className='budget'>${this.state.currentMovie.budget}</td>
+                  <td className='revenue'>${this.state.currentMovie.revenue}</td>
+                </tr>
+            </table>
+            <Link to='/'>
+              <button className='return-home'>Return Home</button>
+            </Link>
+          </article>
         </section>}
       </>
     )
