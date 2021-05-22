@@ -56,17 +56,24 @@ h2, h3, p {
 }
 
 .overview {
-  margin-bottom: .5vw;
+  margin-bottom: 1vw;
+  font-size: .9rem;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  font-style: italic;
 }
 
 .data-table {
   margin-bottom: .5vw;
   text-align: center;
-  border-spacing: 1.5vw;
+  border-spacing: 1vw;
 }
 
 .top-row {
   text-decoration: underline;
+  font-weight: bold;
 }
 
 .return-home {

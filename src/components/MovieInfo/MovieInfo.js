@@ -61,7 +61,7 @@ class MovieInfo extends Component {
             </table>
             <div className='overview-tag'>
               <p className='overview'>{this.state.currentMovie.overview}</p>
-              <p className='tagline'>{this.state.currentMovie.tagline}</p>
+              <p className='tagline'>"{this.state.currentMovie.tagline}"</p>
             </div>
             <table className='data-table'>
                 <tr className='top-row'>
