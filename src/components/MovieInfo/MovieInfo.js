@@ -55,8 +55,8 @@ class MovieInfo extends Component {
                   <td>Release Date</td>
                 </tr>
                 <tr>
-                  <td>{this.state.currentMovie.runtime} minutes</td>
-                  <td>{this.state.currentMovie.release_date}</td>
+                  <td className='runtime'>{this.state.currentMovie.runtime} minutes</td>
+                  <td className='release-date'>{this.state.currentMovie.release_date}</td>
                 </tr>
             </table>
             <div className='overview-tag'>
@@ -69,8 +69,8 @@ class MovieInfo extends Component {
                   <td>Revenue</td>
                 </tr>
                 <tr>
-                  <td>${this.state.currentMovie.budget}</td>
-                  <td>${this.state.currentMovie.revenue}</td>
+                  <td className='budget'>${this.state.currentMovie.budget}</td>
+                  <td className='revenue'>${this.state.currentMovie.revenue}</td>
                 </tr>
             </table>
             <Link to='/'>
