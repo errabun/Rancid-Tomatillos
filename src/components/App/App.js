@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import AllMovies from '../AllMovies/AllMovies'
 import MovieInfo from '../MovieInfo/MovieInfo'
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 import './App.css'
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
           }}
         />
       </Switch>
+      <Footer />
     </main>
   )
 }

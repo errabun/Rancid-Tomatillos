@@ -1,10 +1,14 @@
+h2 {
+  color: #87e7ff;
+}
+
 .nav-bar {
   display: inline-flex;
   justify-content: space-between;
   width: 100%;
   background: linear-gradient(#240059, #4601b5, #240059);
   font-family: 'Anton', sans-serif;
-  color: white;
+  color: #87e7ff;
   height: 15vh;
 }
 
