@@ -16,4 +16,14 @@ h2 {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+@media only screen and (max-width: 800px) {
+
+}
+
+@media only screen and (max-width: 550px) {
+
 }

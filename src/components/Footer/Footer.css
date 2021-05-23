@@ -7,6 +7,7 @@
   color: #87e7ff;
   height: 20vh;
   align-items: center;
+  border-top: #87e7ff solid 3px;
 }
 
 .github-link {
