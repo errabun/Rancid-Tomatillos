@@ -13,10 +13,15 @@ class Search extends Component {
     this.setState({ query: event.target.value })
   }
 
+  clearInput = () => {
+    this.state.query = ''
+  }
+
   getQuery = event => {
     event.preventDefault()
     const inputData = this.state.query
     this.props.submitSearch(inputData)
+    this.clearInput()
   }
 
   render() {
@@ -30,7 +35,7 @@ class Search extends Component {
             value={this.state.query}
             onChange={event => this.searchInput(event)} >
           </input>
-          <button onClick={event => this.getQuery(event)}>SEARCH</button>
+          <button className='submit-search' onClick={event => this.getQuery(event)}>SEARCH</button>
         </form>
       </div>
     )
