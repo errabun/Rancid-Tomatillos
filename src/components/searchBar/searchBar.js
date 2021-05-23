@@ -14,7 +14,7 @@ class Search extends Component {
   }
 
   clearInput = () => {
-    this.state.query = ''
+    this.setState({ query: '' })
   }
 
   getQuery = event => {
