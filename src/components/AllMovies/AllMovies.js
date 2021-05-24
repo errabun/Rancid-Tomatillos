@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Movie from '../Movie/Movie'
-import Search from '../SearchBar/SearchBar'
-import { Link } from 'react-router-dom'
+import Search from '../searchBar/searchBar'
 import './AllMovies.css'
 import { fetchAllMovies } from '../../utilities/ApiCalls'
 
@@ -29,14 +28,11 @@ class AllMovies extends Component {
           id = {movie.id}
           posterPath = {movie['poster_path']}
           title = {movie.title}
-          avgRating = {movie['average_rating']}
         />
       )
     })
     return mappedMovies
   }
-
-
 
   submitSearch = inputData => {
     const findMovie = this.state.movies.filter(movie => {
