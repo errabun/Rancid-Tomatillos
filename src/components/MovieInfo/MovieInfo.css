@@ -90,6 +90,7 @@ h2, h3, p {
 }
 
 @media only screen and (max-width: 550px) {
+
   .movie-card {
     flex-direction: column-reverse;
   }
@@ -100,5 +101,22 @@ h2, h3, p {
 
   .movie-stats {
     width: 84vw;
+  }
+
+  .genres {
+    font-size: 1.2rem;
+  }
+
+  .data-table {
+    font-size: 1.2rem;
+  }
+
+  .overview {
+    font-size: 1.25rem;
+  }
+
+  .tagline {
+    font-size: 1.75rem;
+    font-style: italic;
   }
 }
