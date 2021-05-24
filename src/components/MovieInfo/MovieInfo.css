@@ -3,42 +3,48 @@ h2, h3, p {
 }
 
 .movie-card {
+  background-size: cover;
+
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 100%;
-  color: white;
+
   border-top: #87e7ff solid 3px;
   border-bottom: #87e7ff solid 3px;
-  background-size: cover;
+  width: 100%;
+
+  color: white;
 }
 
 .ind-movie-poster {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   width: 28vw;
   min-width: 300px;
+  margin: 2vw;
   border-radius: 15px;
   border: #87e7ff solid 3px;
-  margin: 2vw;
 }
 
 .movie-stats {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: #87e7ff solid 3px;
+
+  width: 40vw;
   margin: 2vw;
   padding: 3vw;
+  border: #87e7ff solid 3px;
   border-radius: 15px;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-  width: 40vw;
 }
 
 .title-rating-genres {
-  margin-bottom: 1vw;
   text-align: center;
+  margin-bottom: 1vw;
 }
 
 .title {
@@ -46,13 +52,13 @@ h2, h3, p {
 }
 
 .avg-rating {
-  font-size: 2rem;
   margin-bottom: 1vw;
+  font-size: 2rem;
 }
 
 .overview-tag {
-  margin-bottom: .5vw;
   text-align: center;
+  margin-bottom: .5vw;
 }
 
 .overview {
@@ -66,8 +72,8 @@ h2, h3, p {
 }
 
 .data-table {
-  margin-bottom: .5vw;
   text-align: center;
+  margin-bottom: .5vw;
   border-spacing: 1vw;
 }
 
