@@ -66,7 +66,7 @@ We began this project after one lesson on React using some mock data to get a fe
 
  - Eric: There were so many wins throughout the course of this project that really helped my understanding of the use of functional and class components in React, re-routing the user and being able to display information based on the url so the user can utilize the back/forward arrow commands in their browser, and Cypress testing.  Riley is incredibly knowledgable, compassionate and organized so the flow of the project was seamless from start to end.  Happy with the way our project is designed and functions!
 
- - Riley:
+ - Riley: Because we took the time to read up on React, Router, and Cypress before using them in our project, the implementation of each of these new technologies went really smoothly. It was great to take our time with the learning and gain so much from it. It was my first time with acceptance testing and it was fun to shift my thinking about testing to gain a better awareness of the user experience. Eric is very patient, positive, and motivated, making for a really wonderful project and learning experience.
 
 ## Authors
 <table>
@@ -89,7 +89,7 @@ We began this project after one lesson on React using some mock data to get a fe
         <td>Styling</td>
     </tr>
     </tr>
-        <td><img src="https://lh3.googleusercontent.com/proxy/VfscE1Ce9eRw61iORI81vQJ4rX6_iViyRNdUGZw3tGYg4CCv8SkXz0FZ80xlsgrsZl8u3mVTQUK1IP3fUlTGNQNt1xcOGBivHVArAxk9bZzZTVr8eHniR3teqshlR87MMdgJ7dLKbncsAxrX2lsOZluoJA" alt="react" width="100" height="auto" /></td>
+        <td><img src="https://mildaintrainings.com/wp-content/uploads/2017/11/react-logo.png" alt="react" width="100" height="auto" /></td>
         <td><img src="https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png" alt="javascript" width="100" height="auto" /></td>
         <td><img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png" alt="html" width="100" height="auto" /></td>
         <td><img src="https://www.pinclipart.com/picdir/middle/175-1759459_eng-a-med-kamel-frameworks-css-css-logo.png" alt="css" width="100" height="auto" /></td>
