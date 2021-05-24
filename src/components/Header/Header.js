@@ -10,7 +10,7 @@ const Header = () => {
         <h1>Rancid Tomatillos</h1>
       </div>
       <div className="nav-title">
-        <h2>🍿  Profile</h2>
+        <h1>🍿  Profile</h1>
       </div>
     </nav>
   )

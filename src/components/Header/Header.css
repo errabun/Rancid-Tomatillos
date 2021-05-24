@@ -1,5 +1,5 @@
-h2 {
-  color: #87e7ff;
+h1 {
+  margin: 0;
 }
 
 .nav-bar {
@@ -10,6 +10,7 @@ h2 {
   font-family: 'Anton', sans-serif;
   color: #87e7ff;
   height: 15vh;
+  min-height: 125px;
 }
 
 .nav-title {
@@ -25,10 +26,16 @@ h2 {
   margin-right: 5px;
 }
 
-@media only screen and (max-width: 800px) {
-
-}
-
 @media only screen and (max-width: 550px) {
+  .nav-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+  }
 
+  .nav-title {
+    margin-bottom: 10px;
+  }
 }
