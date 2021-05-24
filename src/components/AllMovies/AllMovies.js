@@ -58,19 +58,12 @@ class AllMovies extends Component {
         <section className='movie-display'>
           {!this.state.movies.length &&
             !this.state.error &&
-            <div className='msg-container'>
               <h1 className='loading user-msg'>Loading...</h1>
-              <Link to='/'>
-                <button className='return-home'>Return Home</button>
-              </Link>
-            </div>
           }
           {this.state.error &&
             <div className='msg-container'>
               <h1 className='error-msg user-msg'>{this.state.error}</h1>
-              <Link to='/'>
-                <button className='return-home'>Return Home</button>
-              </Link>
+              <button className='return-home' onClick={() => {window.location.href="/"}}>Return Home</button>
             </div>
           }
           {!this.state.error &&
