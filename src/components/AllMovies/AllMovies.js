@@ -54,7 +54,7 @@ class AllMovies extends Component {
         <div className='landing-img'>
           <Search submitSearch={this.submitSearch} />
         </div>
-        <section>
+        <section className='movie-display'>
           {!this.state.movies.length &&
             !this.state.error &&
             <h1 className='loading'>Loading...</h1>
