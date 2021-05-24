@@ -30,7 +30,7 @@ class Search extends Component {
         <form className='search-form'>
           <input
             type='text'
-            placeholder='Search title or genre'
+            placeholder='Search title'
             name='query'
             value={this.state.query}
             onChange={event => this.searchInput(event)} >
