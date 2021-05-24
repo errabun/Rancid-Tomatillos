@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Movie from '../Movie/Movie'
 import Search from '../SearchBar/SearchBar'
+import { Link } from 'react-router-dom'
 import './AllMovies.css'
 import { fetchAllMovies } from '../../utilities/ApiCalls'
 
@@ -57,10 +58,20 @@ class AllMovies extends Component {
         <section className='movie-display'>
           {!this.state.movies.length &&
             !this.state.error &&
-            <h1 className='loading'>Loading...</h1>
+            <div className='msg-container'>
+              <h1 className='loading user-msg'>Loading...</h1>
+              <Link to='/'>
+                <button className='return-home'>Return Home</button>
+              </Link>
+            </div>
           }
           {this.state.error &&
-            <h1 className='error-msg'>{this.state.error}</h1>
+            <div className='msg-container'>
+              <h1 className='error-msg user-msg'>{this.state.error}</h1>
+              <Link to='/'>
+                <button className='return-home'>Return Home</button>
+              </Link>
+            </div>
           }
           {!this.state.error &&
             this.state.foundMovie &&
