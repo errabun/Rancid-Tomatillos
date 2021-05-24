@@ -10,7 +10,7 @@
 
 ## Description
 
- - This project was a paired project assigned by (Turing School of Software and Design)[www.turing.edu].  We were given two weeks to complete a mock movie review website based on movies that were pulled from an existing API using React.  We were continually learning how to use React, Router and Cypress throughout the scope of the project.  We were given full creative control of the design of the project.   
+ - This project was a paired project assigned by [Turing School of Software and Design](www.turing.edu).  We were given two weeks to complete a mock movie review website based on movies that were pulled from an existing API using React.  We were continually learning how to use React, Router and Cypress throughout the scope of the project.  We were given full creative control of the design of the project.   
 
 ### Notable features
 
@@ -25,7 +25,7 @@
 
 
 ## Installation
-1. Clone down this (repo)[https://github.com/errabun/Rancid-Tomatillos]
+1. Clone down this [repo](https://github.com/errabun/Rancid-Tomatillos)
 2. CD into project directory
 3. Run npm i to install all project dependencies
 4. Run npm start to begin the server
@@ -58,7 +58,7 @@ Router Ability - URL and current MovieInfo displaying are updated together
 
 Search Ability
 
-<img src="./public/rancid-search-ability.gif" width="400">
+<img src="./public/rancid-search-movie.gif" width="400">
 
 
 ## New Learning
