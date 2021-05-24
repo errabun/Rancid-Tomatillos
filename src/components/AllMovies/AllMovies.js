@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Movie from '../Movie/Movie'
-import Search from '../SearchBar/SearchBar'
+import Search from '../searchBar/searchBar'
 import './AllMovies.css'
 import { fetchAllMovies } from '../../utilities/ApiCalls'
 
