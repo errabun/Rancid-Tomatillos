@@ -32,11 +32,16 @@ class MovieInfo extends Component {
     return (
       <>
         {!this.state.currentMovie &&
-          <h1>{this.state.error}</h1>
+          <div className='msg-container'>
+            <h1 className='error-msg user-msg'>{this.state.error}</h1>
+            <Link to='/'>
+              <button className='return-home'>Return Home</button>
+            </Link>
+          </div>
         }
         {!this.state.currentMovie &&
           !this.state.error &&
-          <h1>Loading...</h1>
+          <h1 className='loading user-msg'>Loading...</h1>
         }
         {this.state.currentMovie &&
         <section className='movie-card' style={{

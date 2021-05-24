@@ -1,12 +1,15 @@
 .footer-container {
   display: inline-flex;
   justify-content: space-around;
+  align-items: center;
+
+  border-top: #87e7ff solid 3px;
   width: 100%;
+  height: 20vh;
+  
   background: linear-gradient(#240059, #4601b5, #240059);
   font-family: 'Anton', sans-serif;
   color: #87e7ff;
-  height: 20vh;
-  align-items: center;
 }
 
 .github-link {

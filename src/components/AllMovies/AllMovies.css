@@ -11,6 +11,16 @@ html {
   overflow: hidden;
 }
 
+.msg-container {
+  display: flex;
+  padding: 10vh;
+}
+
+.user-msg {
+  margin-right: 10vh;
+  color: #87e7ff;
+}
+
 @media only screen and (max-width: 800px) {
   .all-movies {
     grid-template-columns: 1fr 1fr 1fr;

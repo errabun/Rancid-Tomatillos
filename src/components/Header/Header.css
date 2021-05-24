@@ -1,19 +1,43 @@
-h2 {
-  color: #87e7ff;
+h1 {
+  margin: 0;
 }
 
 .nav-bar {
   display: inline-flex;
   justify-content: space-between;
+
   width: 100%;
-  background: linear-gradient(#240059, #4601b5, #240059);
-  font-family: 'Anton', sans-serif;
-  color: #87e7ff;
   height: 15vh;
+  min-height: 125px;
+
+  background: linear-gradient(#240059, #4601b5, #240059);
+  color: #87e7ff;
+  font-family: 'Anton', sans-serif;
 }
 
 .nav-title {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.logo {
+  margin-right: 5px;
+  width: 30px;
+}
+
+@media only screen and (max-width: 550px) {
+  .nav-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+  }
+
+  .nav-title {
+    margin-bottom: 10px;
+  }
 }

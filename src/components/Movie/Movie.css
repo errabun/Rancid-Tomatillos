@@ -1,14 +1,9 @@
-* {
-  /* border: 1px solid green; */
-}
-
 h3 {
   margin: 0;
 }
 
 .movie-poster:hover {
   transform: scale(1.1);
-
   box-shadow: 0 0 .75em #87e7ff;
 }
 
@@ -16,6 +11,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   width: 22vw;
   margin: 1vw;
   border-radius: 15px;
@@ -24,8 +20,8 @@ h3 {
 
 @media only screen and (max-width: 800px) {
   .movie-poster {
-    width: 30vw;
     margin: .75vw;
+    width: 30vw;
   }
 }
 
