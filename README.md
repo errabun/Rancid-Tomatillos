@@ -38,15 +38,28 @@
 
 Desktop
 
-![insert text](link)
+<img src="./public/rancid-home-page.gif" width="400">
 
-iPad
+Tablet
 
-![insert text](link)
+<img src="./public/rancid-tablet-view.gif" width="400">
 
 Mobile
 
-![insert text](link)
+<img src="./public/rancid-mobile-view.gif" width="400">
+
+MovieInfo - When a card is clicked, the information for that specific movie is displayed with the ability to navigate back to the homepage
+
+<img src="./public/rancid-MovieInfo.gif" width="400">
+
+Router Ability - URL and current MovieInfo displaying are updated together
+
+<img src="./public/rancid-router-ability.gif" width="400">
+
+Search Ability
+
+<img src="./public/rancid-search-ability.gif" width="400">
+
 
 ## New Learning
 
